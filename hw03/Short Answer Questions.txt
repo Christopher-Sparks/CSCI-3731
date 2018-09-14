@@ -1,0 +1,19 @@
+1. The error here is in the line <if(i=0)min=value;>. The 0 is assigned to the variable i which means the if statement will always be false. Therefore, the line will never run. To fix this, change = to ==. 
+
+2. The error here is that either variable a or b will go out of scope and the computer will delete them when the function returns. TO fix this change the signature to <int function()> and the return line to <return a>. 
+
+3. You should not dereference a pointer to NULL or it will have a segmentation fault. Here is one way to fix the code:
+
+int ptr=NULL;
+scanf("%d", &ptr);
+printf("You entered %d", ptr);
+
+4. int* a; //declares the pointer a to an int
+   const int b; //declares an int b where its value cannot be changed
+   const int* c; //declares pointer to const int, can change pointer, but not the data it points to
+   int* const d; //declares const pointer to int, can change data it points to, but not the pointer
+   const int* const e; //const pointer to const int, can't change the pointer or the data it points to
+
+5. * dereferences a pointer, & does the opposite, it returns a pointer. 
+
+6. The difference between const int* a and int* const b is that const int* a is a pointer to const int. So you can change the pointer but not the value of a. int* const b on the other hand declares a const pointer to an int. So you can change the data it holds but not the pointer itself. 
