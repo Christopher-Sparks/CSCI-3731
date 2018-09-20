@@ -1,0 +1,10 @@
+1. In the method a and b should be dereferenced with a *, otherwise the method will not do anything since it is not changing the value within the pointer given in the argument. Also temp does not need to be dereferenced since it only exists within the method and does't mind going out of scope.
+Change the code to this:
+
+void swap(int* a, int* b) {
+int* tmp = a;
+a = b;
+b = tmp;
+} // end of swap method
+
+2. 
