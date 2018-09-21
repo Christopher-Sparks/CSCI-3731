@@ -7,4 +7,31 @@ a = b;
 b = tmp;
 } // end of swap method
 
-2. 
+2. You should always check the allocated length of the string array. So change code to this:
+
+char copy[8];
+const char* string = "hello";
+int size = sizeof(string)/sizeof(char);
+for(int i=0; i<size && string[i] != ’\0’; ++i) {
+copy[i] = string[i];
+}
+printf("%s\n", copy);
+
+3. f(a+2, 4);
+
+4. You can't return an array that way, it will become out of scope. You have to use new Change to this: 
+
+double* allocateArray(int length) {
+double* array = new double[length];
+return array;
+}
+
+5. You need 6 characters to store it since you also have to keep in mind the extra '\0'. So change code to the following: 
+
+char string[6];
+string[0] = ’h’;
+string[1] = ’e’;
+string[2] = ’l’;
+string[3] = ’l’;
+string[4] = ’o’;
+printf("%s\n", string);

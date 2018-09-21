@@ -18,6 +18,8 @@ unsigned char* readPPM(const char* fileName, char* magicNum, int* width, int* he
 
   unsigned char* pixelArray = new unsigned char[*size]; //create new array to return
 
+  /////memset(pixelArray, 0, sizeof(unsigned char) * *size)
+
   fread(pixelArray, sizeof(unsigned char), *size, fp);
 
   fclose(fp);
