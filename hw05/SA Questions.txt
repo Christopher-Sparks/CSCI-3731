@@ -1,0 +1,5 @@
+1. The issue with two-dimensional arrays in C/C++ is when it comes to passing them in functions. You must specify the dimensions of the 2D array instead of having it set to accommodate any size array. 
+
+2. One way to get around this is by using a flat array. However, an issue with just using a flat array is indexing each value can be very time consuming. Another way to work around this issue is with the numerical recipes trick. This builds upon the usage of flat arrays and makes another array of pointers which point to the beginning of each array. The big advantage of using this trick is that it allows you to reference each element the same way you would in another language like Java. 
+
+3. Macs are little endian, therefore their leading bit is going from small to big. 

@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include "writePPM.h"
 
-void writePPM (const char* fileNameCopy, const int width, const int height, int** array_2D, const int size){
+void writePPM (const char* fileNameCopy, const int width, const int height, int** array_2D){
 
   FILE* fp = fopen(fileNameCopy,"wb");
   char magicNumber[] = "P6";
   int maxPixel = 255;
   fprintf(fp, "%s\n%d %d\n%d\n", magicNumber, width, height, maxPixel); //adds header info
+
+  int size = (width * height)*3; //number of pixels in the image
 
   unsigned char* array_pixel = new unsigned char[size];
 

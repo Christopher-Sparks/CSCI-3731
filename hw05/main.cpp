@@ -7,13 +7,12 @@ int main(){
   char fileNameCopy[] = "copy.ppm";
   int width = 0;
   int height = 0;
-  int size = 0;
 
   //readPPM
-  int** array_2D = readPPM(fileName,&width,&height,&size);
+  int** array_2D = readPPM(fileName,&width,&height);
 
   //writePPM
-  writePPM(fileNameCopy, width, height, array_2D, size);
+  writePPM(fileNameCopy, width, height, array_2D);
 
   printf("\nCopy made!\n\n");
 
