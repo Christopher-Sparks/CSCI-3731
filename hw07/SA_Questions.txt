@@ -1,0 +1,20 @@
+1. There needs to be a semicolon after the brackets. 
+
+2. First, you need to indicate which class the method belongs to. Second, you need to change x and y to the name of the constructor arguments. Lastly, "this" refers to a pointer in C++, so you need to dereference it or use ->. The code should look like this:
+
+Projectile::Projectile(int speed, int velocity) {
+this->speed = speed;
+this->velocity = velocity;
+} // end of constructor
+
+3. a) A method that takes a pointer to an int as an argument and returns a pointer to an int.
+   b) A method that takes a pointer to an int as an argument and returns a pointer to a const int.
+   c) A method that takes a pointer to an int as an argument and returns a const pointer to a const int.
+   d) A method that takes a pointer to a const int as an argument and returns a const pointer to a const int.
+   e) A method that takes a pointer to a const int as an argument and returns a const pointer to a const int. While also ensuring the object that called it cannot have any of its variables modified. 
+
+4. C++ strings are safer and more convenient to use than C strings. With C strings you have to deal with the \O terminator and have set sizes since they are related to arrays/pointers. The advantages of C strings is that C libraries and some C++ libraries only take C strings as arguments. And C strings are more lightweight meaning they are better used for super critical performance code. 
+
+5. Pointers and references are the same except for a few differences. A reference is automatically dereferenced so you do not have to write *. Also, references must be initialized when they are declared and cannot be set to NULL. 
+
+6. The destructor is called when the class is deleted. The main purpose of the destructor is to delete the heap data created by the object. 
