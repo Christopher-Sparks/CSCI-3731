@@ -1,0 +1,16 @@
+1. The friend keyword is for enabling a function to access a class's private data and methods.
+
+2. If you do so, you will import the namespace in any C++ file that includes the header. By doing that, you can't use namespace to avoid collisions anymore.
+
+3. a) Have the method directly return the object. This creates a copy of the object to return, and will be inefficient when dealing with large objects.
+   b) Using the new keyword, create an object on the heap and have the method return a pointer to it. However, the caller is now responsible for deleting the object.
+   c) Return a const reference to a member of the class. Declaring it const will ensure the reference will remain valid as long as the class is around. The issue with this is that every caller has the same reference.
+   d) Have the method be void, and take in an existing object. Then the method will modify the given object. Leaves memory management up to caller. This doesn't work when the object being modified does not have methods to modify it. 
+
+4. When a variable is marked mutable, they are exempt from the rule where you can't modify them inside a const method. 
+
+5. a) As an actual object. In this case memory management is automatic, as the class owns the object. 
+   b) As a reference. Lets multiple classes share the same object. The class does not own the object.
+   c) As a pointer. Allows the object to be set to NULL. The ownership must be kept track of. 
+
+6. A singleton is a pattern that restricts the class to only create one object. 
