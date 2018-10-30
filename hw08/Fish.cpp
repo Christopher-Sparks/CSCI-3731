@@ -6,16 +6,19 @@
 
 Fish::Fish(int fish_id, Point position, double speed, Angle direction, Angle turn_rate, Population* pool){
     this->fish_id = fish_id;
-    this->position = &position;
+    this->position = new Point(position);
     this->speed = speed;
-    this->direction = &direction;
-    this->turn_rate = &turn_rate;
+    this->direction = new Angle(direction);
+    this->turn_rate = new Angle(turn_rate);
     this->pool = pool;
     pool->add(this);
 }
 
 Fish::~Fish(){
     pool->remove(pool->get_index(this));
+    delete position;
+    delete direction;
+    delete turn_rate;
 }
 
 void Fish::swim(){
