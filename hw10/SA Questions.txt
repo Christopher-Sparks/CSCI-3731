@@ -1,0 +1,7 @@
+1. The main difference is that in java, in order to make a collection you make an ArrayList. This contains a list of objects, and since objects are the superclass to all other classes you can put what you like into them. In C++ you would have to rewrite the code to support it for each datatype you would want to use. This is where templates comes in, more importantly the Standard Template Library which is the equivalent to ArrayList in java. 
+
+2. The difference between classes and templates is that templates allow the user to specify a data type to its members later instead of writing multiple classes to cover all these different data types. One thing to note is that when you write a template there is no corresponding cc file, instead you have all the definitions in the header file. 
+
+3. The drawbacks of templates is that each time a different data type is instantiated the compiler creates a separate version of the class, as well as recompiling all of its methods. This makes the executable file larger and compile time slower. Another issue is that it doesn't recognize the similarities between a class<double> and a class<float>, so you won't be able to cast one to the other nor create a method that would take one or the other as arguments. 
+
+4. An iterator is a class that represents the current element of a collection, and lets you step from one element to the next. It overrides the ++ operator to move to the next element, as well as overriding the * to return a reference to the current element. 
